@@ -1,0 +1,32 @@
+{% include 'adminheader.html' %}
+<table>
+<tr>
+		<td colspan="2">Upload images for training</td>
+	</tr>
+	{% if data['val']=="0" %}
+	<tr>
+		<th>Photo1:</th>
+		<td><a href="?ids={{data['ids']}}&val=1">Upload photo 1</a></td>
+	</tr>
+	{% elif data['val']=="1" %}
+	<tr>
+		<th>Photo2:</th>
+		<td><a href="?ids={{data['ids']}}&val=2">Upload photo 2</a></td>
+	</tr>
+	{% elif data['val']=="2" %}
+	<tr>
+		<th>Photo3:</th>
+		<td><a href="?ids={{data['ids']}}&val=3">Upload photo 3</a></td>
+	</tr>
+	{% else %}
+	<tr>
+		<th>Already Added Three images</th>
+	</tr>
+	{% endif %}
+
+	
+
+	</table>
+
+
+{% include 'footer.html' %}

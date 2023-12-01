@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		
+	</title>
+</head>
+<body onload="print()">
+<script type="text/javascript">
+	document.write(sessionStorage.getItem("min"));
+
+	if (sessionStorage.getItem("min")==null)
+	{
+	sessionStorage.setItem("min","20");
+	
+	}
+	
+	function print()
+	{
+	document.getElementById("value").value=sessionStorage.getItem("min");
+	}
+
+	function mul()
+	{
+		var num=parseInt(document.getElementById("val").value);
+		sessionStorage.setItem("min",num*5);
+		document.getElementById("value").value=sessionStorage.getItem("min");
+		
+	}
+	function clear()
+	{
+		sessionStorage.clear();
+	}
+
+</script>
+<form>
+<input type="text" id="val" value="6" onchange="mul()">
+<input type="text" name="value" id="value">
+<input type="submit" value="clear" onclick="clear()">
+</form>
+
+</body>
+</html>

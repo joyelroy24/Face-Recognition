@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">	
+	for (i=1; i<=5; i++)  
+	{  
+	document.write(i + "<br/>")  
+	}  
+	var i=1
+	while (i<5)
+	{
+		document.write(i+"<br>");
+		i++ 	
+	}
+	function msg()
+	{
+		var a=document.getElementById("change").value;
+		document.getElementById("ss").value=a*4;		
+		alert("sucess")
+		var today=new Date();  
+		document.getElementById('txt').innerHTML=today;
+	}
+
+	  var img = null;     
+            function init(){      
+               img = document.getElementById('myimg');    
+               img.style.position = 'relative';         
+               img.style.left = '50px';       
+            }         
+            function moveRight(){      
+               img.style.left = parseInt(    
+               img.style.left) + 100 + 'px';      
+            }    
+
+            function moveleft(){
+            	img.style.left=parseInt(img.style.left)-100+'px';
+            }  
+            window.onload = init;      
+
+
+</script>
+<input type="text" name="change" onchange="msg()" value="3" id="change">
+<input type="button" onclick="msg()" value="call function"/>  
+<input type="text" name="ss" id="ss">
+<a href="C:\Users\user\Desktop\Facerecognition/h1.jpg" download="logo"><img src="C:\Users\user\Desktop\Facerecognition/h1.jpg" height="50" width="50"></a>
+<div id="txt"></div>
+<br>
+<img id = "myimg" src = "C:\Users\user\Desktop\Facerecognition/h3.jpg" height="100" width="100">     
+<center>    
+   
+<input type = "button" value = "Right" onclick = "moveRight();" />  
+<input type="button" value="Left" onclick="moveleft()" >  
+<a target="_blank" href="login.html">login</a>
+</center>     
+</body>
+</html>

@@ -1,0 +1,67 @@
+{% include 'adminheader.html' %}
+
+<h1>Add Staff</h1>
+<form method="post" enctype="multipart/form-data">
+<table>
+	<tr>
+		<td>name</td>
+		<td><input type="text" name="name" required class="form-control"></td>
+	</tr>
+	<tr>
+		<td>aadhar</td>
+		<td><input type="text" name="aadhar" required class="form-control"></td>
+	</tr>
+	<tr>	
+		<td>dateofjoining</td>
+		<td><input type="date" name="date" required class="form-control"></td>
+	</tr>
+	<tr>
+		<th> image </th>
+		<td> <input type="file"  required="" name="image" class="form-control"></td>
+	</tr>
+	<tr>
+		<td>Images Upload for Training</td>
+	</tr>
+	<tr>
+		<th> photo1 </th>
+		<td> <input type="file"  required="" name="image1" class="form-control"></td>
+	</tr>
+	<tr>
+		<th> photo2 </th>
+		<td> <input type="file"  required="" name="image2" class="form-control"></td>
+	</tr>
+	<tr>
+		<th> photo3 </th>
+		<td> <input type="file"  required="" name="image3" class="form-control"></td>
+	</tr>
+
+		
+	<tr>
+		<td colspan="2" align="center"><input type="submit" name="submits" value="Register"></td>
+	</tr>
+</table>
+</form>
+<h1>View Staff</h1>
+
+<table align="center" style="width: 1000px" class="table">
+
+	<tr>
+		<th>Name</th>
+		<th>Aadhar</th>
+		<th>Dateof Joining</th>
+		<th>Image</th>
+		
+	</tr>
+	{% for row in data['staffs'] %}
+	<tr>
+		<td>{{ row['name'] }}</td>
+		<td>{{row['aadhar']}}</td>
+		<td>{{ row['dateofjoining'] }}</td>
+		<td>{{ row['image'] }}</td>
+		<td><a href="uploadimagesforstaff?ids={{ row['staff_id'] }}">Upload Photos</a></td>
+		
+		
+	</tr>
+	{% endfor %}
+</table>
+{% include 'footer.html' %}
